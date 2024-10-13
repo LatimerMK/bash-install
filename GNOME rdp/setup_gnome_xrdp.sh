@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# bash <(curl -s https://raw.githubusercontent.com/LatimerMK/bash-install/refs/heads/main/GNOME%20rdp/setup_gnome_xrdp.sh)
 # Оновлюємо систему
 echo "Оновлення системи..."
 sudo apt update && sudo apt upgrade -y
