@@ -2,19 +2,24 @@
 # bash <(curl -s https://raw.githubusercontent.com/LatimerMK/bash-install/refs/heads/main/GNOME_rdp/setup_gnome_xrdp.sh)
 # Оновлюємо систему
 echo "Оновлення системи..."
-sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade
 
 # Встановлення GNOME (ви можете змінити на gnome-session-flashback, якщо це потрібно)
 echo "Встановлюємо GNOME..."
-sudo apt install ubuntu-gnome-desktop -y
+sudo apt install ubuntu-gnome-desktop
 
 # Встановлюємо Xrdp
 echo "Встановлюємо Xrdp..."
-sudo apt install xrdp -y
+sudo apt install xrdp
+
+# Встановлюємо xfce4
+echo "Встановлюємо xfce4..."
+sudo apt install xfce4
 
 # Додаємо користувача в групу ssl-cert
 echo "Додаємо користувача Xrdp до групи ssl-cert..."
 sudo adduser xrdp ssl-cert
+sudo adduser root xrdp
 
 # Перезапускаємо Xrdp
 echo "Перезапуск Xrdp..."
