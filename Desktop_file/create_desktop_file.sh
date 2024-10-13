@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# bash <(curl -s https://raw.githubusercontent.com/yourusername/yourrepository/main/create_desktop_file.sh) "My Application" "/path/to/your/executable" "/path/to/your/icon.png"
+# bash <(curl -s https://raw.githubusercontent.com/LatimerMK/bash-install/refs/heads/main/Desktop_file/create_desktop_file.sh) "My Application" "/path/to/your/executable" "/path/to/your/icon.png"
 # Перевірте, чи надано необхідні аргументи
 if [ "$#" -ne 3 ]; then
     echo "Використання: $0 <name> <exec_path> <icon_path>"
