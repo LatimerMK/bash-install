@@ -16,11 +16,6 @@ sudo apt install xrdp -y
 echo "Встановлюємо xfce4..."
 sudo apt install xfce4 -y
 
-# Додаємо користувача в групу ssl-cert
-#echo "Додаємо користувача Xrdp до групи ssl-cert..."
-#sudo adduser xrdp ssl-cert
-#sudo adduser root xrdp
-
 # Перезапускаємо Xrdp
 echo "Перезапуск Xrdp..."
 sudo systemctl restart xrdp
