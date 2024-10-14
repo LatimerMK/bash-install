@@ -1,9 +1,10 @@
 #!/bin/bash
+# curl -s https://raw.githubusercontent.com/LatimerMK/bash-install/refs/heads/main/tools/logo.sh | bash
 
 function colors {
   GREEN="\e[32m"
   YELLOW="\e[33m"
-  RED="\e[39m"
+  RED="\e[31m"
   NORMAL="\e[0m"
 }
 
