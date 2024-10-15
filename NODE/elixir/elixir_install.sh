@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# bash <(curl -s )
+# bash <(curl -s https://raw.githubusercontent.com/LatimerMK/bash-install/refs/heads/main/NODE/elixir/elixir_install.sh)
 
 curl -s https://raw.githubusercontent.com/LatimerMK/bash-install/refs/heads/main/tools/logo.sh | bash
 
