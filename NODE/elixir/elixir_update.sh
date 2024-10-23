@@ -20,9 +20,7 @@ docker rm -f $container_name
 docker pull elixirprotocol/validator:v3 --platform linux/amd64
 
 echo "Port $node_port"
-echo "MM $beneficiary "
-echo "Validator name $display_name"
-echo "elixir/$env_file"
+echo "Docker container $container_name"
 
 # Запускаємо Docker-контейнер
 sudo docker run -d --env-file "$HOME/elixir/$env_file" --name "$container_name" --platform linux/amd64 --restart always -p "$node_port:$node_port" elixirprotocol/validator:v3
