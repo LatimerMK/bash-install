@@ -31,7 +31,7 @@ EOL
 echo "Файл $env_file створено!"
 
 echo "Інсталюємо докер!"
-apt install docker.io
+apt install docker.io -y
 
 # Завантаження образу
 docker pull elixirprotocol/validator:v3 --platform linux/amd64
