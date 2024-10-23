@@ -5,6 +5,7 @@
 curl -s https://raw.githubusercontent.com/LatimerMK/bash-install/refs/heads/main/tools/logo.sh | bash
 
 # Запитуємо ім'я контейнера
+echo "Запущено оновлення Elixir, вкажіть контейнер для оновлення та порт"
 
 read -p "Введіть ім'я Docker-контейнера: " container_name
 read -p "Введіть порт ноди сток (17690): " node_port
