@@ -16,7 +16,7 @@ env_file="${container_name}.env"
 
 # Запитуємо дані у користувача
 read -p "Введіть STRATEGY_EXECUTOR_DISPLAY_NAME для $container_name: " display_name
-read -p "Введіть STRATEGY_EXECUTOR_BENEFICIARY (адресу каманця) для $container_name: " beneficiary
+read -p "Введіть STRATEGY_EXECUTOR_BENEFICIARY (адресу гаманця) для $container_name: " beneficiary
 read -p "Введіть SIGNER_PRIVATE_KEY для $container_name (без 0x): " private_key
 
 # Записуємо дані у файл env
@@ -29,6 +29,9 @@ SIGNER_PRIVATE_KEY=$private_key
 EOL
 
 echo "Файл $env_file створено!"
+
+echo "Інсталюємо докер!"
+apt install docker.io
 
 # Завантаження образу
 docker pull elixirprotocol/validator:v3 --platform linux/amd64
