@@ -21,7 +21,7 @@ read -p "Введіть SIGNER_PRIVATE_KEY для $container_name (без 0x): "
 
 # Записуємо дані у файл env
 cat <<EOL > "$env_file"
-ENV=testnet-3
+ENV=prod
 
 STRATEGY_EXECUTOR_DISPLAY_NAME=$display_name
 STRATEGY_EXECUTOR_BENEFICIARY=$beneficiary
