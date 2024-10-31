@@ -17,13 +17,13 @@ docker stop $container_name
 docker rm -f $container_name
 
 # Завантаження образу
-docker pull elixirprotocol/validator:v3 --platform linux/amd64
+docker pull elixirprotocol/validator --platform linux/amd64
 
 echo "Port $node_port"
 echo "Docker container $container_name"
 
 # Запускаємо Docker-контейнер
-sudo docker run -d --env-file "$HOME/elixir/${container_name}.env" --name "$container_name" --platform linux/amd64 --restart always -p "$node_port:$node_port" elixirprotocol/validator:v3
+sudo docker run -d --env-file "$HOME/elixir/${container_name}.env" --name "$container_name" --platform linux/amd64 --restart always -p "$node_port:$node_port" elixirprotocol/validator
 
 echo "Docker-контейнер $container_name запущено!"
 
