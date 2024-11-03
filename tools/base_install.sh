@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# bash <(curl -s https://raw.githubusercontent.com/LatimerMK/bash-install/refs/heads/main/tools/base_install.sh)
+
 read -p "Вкажіть розмір файлу підкачки 2G: " set_swap_size
 
 
