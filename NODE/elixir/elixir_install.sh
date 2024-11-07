@@ -42,6 +42,6 @@ echo "Validator name $display_name"
 echo "elixir/$env_file"
 
 # Запускаємо Docker-контейнер
-sudo docker run -d --env-file "$HOME/$container_name/$env_file" --name "$container_name" --platform linux/amd64 --restart always -p "$node_port:$node_port" elixirprotocol/validator
+sudo docker run -d --env-file "$HOME/$container_name/$env_file" --name "$container_name" --platform linux/amd64 --restart always -p "$node_port:17690" elixirprotocol/validator
 
 echo "Docker-контейнер $container_name запущено!"
