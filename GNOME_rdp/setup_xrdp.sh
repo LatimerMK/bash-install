@@ -4,6 +4,7 @@
 curl -s https://raw.githubusercontent.com/LatimerMK/bash-install/refs/heads/main/tools/logo.sh | bash
 
 
+
 # Оновлюємо систему
 echo "Оновлення системи..."
 sudo apt update && sudo apt upgrade -y
@@ -90,6 +91,8 @@ choose_desktop
 # Перезапускаємо Xrdp ще раз для застосування змін
 echo "Перезапуск Xrdp для застосування налаштувань..."
 sudo systemctl restart xrdp
+echo "Перевірте / встановіть оболочку яка буде запускатись автоматично"
+sudo update-alternatives --config x-session-manager
 
 echo "Створення звичайного користувача через якого будемо підключатись"
 echo "*потрібно для коректної роботи певних програм"
