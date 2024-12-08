@@ -19,7 +19,10 @@ sudo dpkg-reconfigure --priority=low unattended-upgrades
 # Встановлення базових інструментів
 sudo apt install git curl wget htop tmux -y
 
+sudo apt install net-tools
+
 # Цей інструмент захищає сервер від спроб перебору паролів через SSH
+# для автоматичного блокування зловмисників
 sudo apt install fail2ban
 sudo systemctl start fail2ban
 sudo systemctl enable fail2ban
