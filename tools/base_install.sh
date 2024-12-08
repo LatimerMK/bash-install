@@ -23,9 +23,11 @@ sudo apt install net-tools
 
 # Цей інструмент захищає сервер від спроб перебору паролів через SSH
 # для автоматичного блокування зловмисників
-sudo apt install fail2ban
+sudo apt install fail2ban -y
 sudo systemctl start fail2ban
 sudo systemctl enable fail2ban
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+# sudo nano /etc/fail2ban/jail.local редагування конфігу
 
 # встановлення Докера
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y

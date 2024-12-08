@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12e06e7e-b49b-4e09-8c27-4d449b8c3646" name="Changes" comment="" />
+    <list default="true" id="12e06e7e-b49b-4e09-8c27-4d449b8c3646" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/tools/base_install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/tools/base_install.sh" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
