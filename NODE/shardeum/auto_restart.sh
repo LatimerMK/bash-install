@@ -23,7 +23,7 @@ cat << 'EOF' > "$CHECK_SCRIPT_PATH"
 
 # Шлях до директорії з нодою
 SHARDEUM_DIR="$HOME/shardeum"
-CLI_SCRIPT="./operator-cli.sh"
+CLI_SCRIPT="docker exec shardeum-validator operator-cli"
 
 # Інтервал перевірки в секундах
 CHECK_INTERVAL=60
@@ -33,12 +33,12 @@ while true; do
     cd $SHARDEUM_DIR
 
     # Отримання статусу ноди
-    STATUS_OUTPUT=$($CLI_SCRIPT status)
+    STATUS_OUTPUT=$($CLI_SCRIPT status 2>&1)
 
     # Перевіряємо, чи є статус "stopped"
     if echo "$STATUS_OUTPUT" | grep -q "state: stopped"; then
         echo "Нода зупинена. Виконується перезапуск..."
-        $CLI_SCRIPT start
+        $CLI_SCRIPT start 2>&1
         echo "Нода перезапущена. Очікуємо наступну перевірку."
     else
         echo "Нода працює нормально."
@@ -47,6 +47,7 @@ while true; do
     # Чекаємо перед наступною перевіркою
     sleep $CHECK_INTERVAL
 done
+
 EOF
 
 # Налаштування прав на виконання
