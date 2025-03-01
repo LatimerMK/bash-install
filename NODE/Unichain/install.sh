@@ -24,7 +24,7 @@ else
 fi
 
 # Редагування docker-compose.yml
-read -p "Редагуйте файл docker-compose.yml, після завершення натисніть CTRL+X -> Y -> Enter"
+read -p "Натисніть Enter щоб редагувати docker-compose.yml, після завершення натисніть CTRL+X -> Y -> Enter"
 nano $HOME/unichain-node/docker-compose.yml
 read -p "Натисніть Enter для продовження..."
 
@@ -38,6 +38,7 @@ curl -d '{"id":1,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["late
 # Вивід приватного ключа
 echo "Приватний ключ Unichain Node:"
 cat $HOME/unichain-node/geth-data/geth/nodekey
+echo
 
 # Дозволяє вставити власний ключ вручну
 read -p "Хочете відредагувати приватний ключ? (y/n): " edit_key
@@ -56,4 +57,16 @@ if [[ "$sync_status" == *'"result":false'* ]]; then
     echo "Синхронізація завершена!"
 else
     echo "Нода ще синхронізується..."
+    echo "Команда для перевірки:"
+    echo ">>>>>> curl -s -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[], "id":1}' -H "Content-Type: application/json" http://localhost:8545"
 fi
+
+echo "============================================================="
+echo "Logs: docker-compose -f $HOME/unichain-node/docker-compose.yml logs -f --tail=100"
+echo "Start: docker-compose -f $HOME/unichain-node/docker-compose up -d"
+echo "Restart: docker-compose -f $HOME/unichain-node/docker-compose restart"
+echo "Stop: docker-compose -f $HOME/unichain-node/docker-compose down"
+echo "Delete node: docker-compose -f $HOME/unichain-node/docker-compose down && sudo rm -r unichain-node"
+echo "Test response: curl -d '{"id":1,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}'  -H "Content-Type: application/json" http://localhost:8545"
+echo "Test sync: curl -s -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[], "id":1}' -H "Content-Type: application/json" http://localhost:8545"
+echo "============================================================="
